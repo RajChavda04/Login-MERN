@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {handleError, handleSuccess} from '../utils'
 import { Link,useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
+import config from '../config';
 
 const Login = () => {
 
@@ -26,7 +27,7 @@ const Login = () => {
             return handleError("email and pasword are required")
         }
         try{
-            const url= `http://localhost:8080/auth/login`;
+            const url= `${config.apiBaseUrl}/auth/login`;
             const response = await fetch(url,{
                 method: "POST",
                 headers: {

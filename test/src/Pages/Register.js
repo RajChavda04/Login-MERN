@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../App.css'
 import { handleError, handleSuccess } from '../utils';
 import { ToastContainer } from 'react-toastify';
+import config from '../config';
 
 
 const Register = () => {
@@ -30,7 +31,7 @@ const Register = () => {
       if(!name||!email || !password || !phone || !address){
         return handleError("name, email , passowrd, address, phone are required")
       } try{
-        const url=`http://localhost:8080/auth/register`
+        const url=`${config.apiBaseUrl}/auth/register`
         const response = await fetch(url,{
           method:"POST",
         headers:{

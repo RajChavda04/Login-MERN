@@ -1,6 +1,7 @@
 import  { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { handleError, handleSuccess } from '../utils';
+import config from '../config';
 
 import { ToastContainer } from 'react-toastify';
 
@@ -25,7 +26,7 @@ const Home = () => {
     }
     const fetchProducts = async () => {
         try {
-            const url = "http://localhost:8080/product/";
+            const url = `${config.apiBaseUrl}/product/`;
             const headers = {
                 headers: {
                     'Authorization': localStorage.getItem('token')
