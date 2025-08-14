@@ -1,0 +1,7 @@
+# Backend folder
+backend/node_modules/
+backend/.env
+
+# Test folder
+test/node_modules/
+test/.env
