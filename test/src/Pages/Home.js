@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify';
 const Home = () => {
 
     const [loggedInUser, setLoggedInUser] = useState('');
-    const [products, setProducts] = useState('');
+    const [products, setProducts] = useState([]);
     const navigate = useNavigate();
 
 
