@@ -25,7 +25,7 @@ const register = async (req, res) => {
             res.status(500)
             .json({
                 message: " Internal server error",
-                success: flase
+                success: false
             })
     }
 }
@@ -46,7 +46,7 @@ const login = async (req,res)=>{
                   }  
                     const jwtToken= jwt.sign(
                         {email: user.email, _id: user._id},
-                        process.env.JWt_SECRET,
+                        process.env.JWT_SECRET,
                         {expiresIn: "24h"}
                     
                     )
