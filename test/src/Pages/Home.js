@@ -8,7 +8,7 @@ import { ToastContainer } from 'react-toastify';
 const Home = () => {
 
     const [loggedInUser, setLoggedInUser] = useState('');
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
     const navigate = useNavigate();
 
 
@@ -24,43 +24,43 @@ const Home = () => {
             navigate('/login');
         }, 1000)
     }
-    const fetchProducts = async () => {
-        try {
-            const url = `${config.apiBaseUrl}/product/`;
-            const headers = {
-                headers: {
-                    'Authorization': localStorage.getItem('token')
-                }
-            }
-            const response = await fetch(url, headers);
-            const result = await response.json();
-            console.log(result);
-            // setProducts(result);
+    // const fetchProducts = async () => {
+    //     try {
+    //         const url = `${config.apiBaseUrl}/product/`;
+    //         const headers = {
+    //             headers: {
+    //                 'Authorization': localStorage.getItem('token')
+    //             }
+    //         }
+    //         const response = await fetch(url, headers);
+    //         const result = await response.json();
+    //         console.log(result);
+    //         // setProducts(result);
 
-             if (Array.isArray(result.products)) {
-            setProducts(result.products);
-        } else if (Array.isArray(result)) {
-            setProducts(result); // already an array
-        } else {
-            setProducts([]); // default empty array
-        }
+    //          if (Array.isArray(result.products)) {
+    //         setProducts(result.products);
+    //     } else if (Array.isArray(result)) {
+    //         setProducts(result); // already an array
+    //     } else {
+    //         setProducts([]); // default empty array
+    //     }
 
-        } catch (err) {
-            handleError(err);
-        }
-    }
+    //     } catch (err) {
+    //         handleError(err);
+    //     }
+    // }
 
     
-    useEffect(() => {
-        fetchProducts()
-    }, [])
+    // useEffect(() => {
+    //     fetchProducts()
+    // }, [])
 
     return (
         <>
             <div className="container2">
                 <h1>Welcome {loggedInUser}</h1>
                 <button onClick={handleLogout}>Logout</button>
-                <div>
+                {/* <div>
                     {
                         products && products?.map((item, index) => (
                             <ul key={index}>
@@ -68,7 +68,7 @@ const Home = () => {
                             </ul>
                         ))
                     }
-                </div>
+                </div> */}
             </div>
             <ToastContainer />
         </>
