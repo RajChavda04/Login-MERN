@@ -75,7 +75,7 @@ const Register = () => {
               <input type="text" name="name" value={signupInfo.name}  onChange={handleChange} placeholder='Enter your name'></input>
 
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" value={signupInfo.email}  onChange={handleChange} placeholder='Enter your eamil'></input>
+              <input type="email" name="email" value={signupInfo.email}  onChange={handleChange} placeholder='Enter your email'></input>
 
               <label htmlFor="phone">Phone No</label>
               <input type="text" name="phone" value={signupInfo.phone}  onChange={handleChange} placeholder='Enter your phone no'></input>

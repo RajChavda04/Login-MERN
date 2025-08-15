@@ -30,9 +30,7 @@ const Login = () => {
             const url= `${config.apiBaseUrl}/auth/login`;
             const response = await fetch(url,{
                 method: "POST",
-                headers: {
-                    'Content-type':"application/json"
-                },
+                headers: {'Content-type':"application/json"},
                 body:JSON.stringify(loginInfo)
             });
 

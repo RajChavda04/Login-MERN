@@ -56,7 +56,7 @@ const login = async (req,res)=>{
                 message:"Login success",
                 success: true,
                 jwtToken,
-                email,
+                email:user.email,
                 name:user.name
 
             })
