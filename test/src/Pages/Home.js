@@ -35,11 +35,22 @@ const Home = () => {
             const response = await fetch(url, headers);
             const result = await response.json();
             console.log(result);
-            setProducts(result);
+            // setProducts(result);
+
+             if (Array.isArray(result.products)) {
+            setProducts(result.products);
+        } else if (Array.isArray(result)) {
+            setProducts(result); // already an array
+        } else {
+            setProducts([]); // default empty array
+        }
+
         } catch (err) {
             handleError(err);
         }
     }
+
+    
     useEffect(() => {
         fetchProducts()
     }, [])
